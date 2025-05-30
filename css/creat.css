@@ -1,174 +1,200 @@
 :root {
-  --bg-body: #2b2b2b;
-  --sidebar-bg: #141414;
-  --group1-bg: #1c1c1c;
-  --group2-bg: #333333;
-  --button-bg: #444444;
-  --button-hover-bg: #666666;
-  --tooltip-bg: rgba(0, 0, 0, 0.8);
-  --tooltip-color: #ffffff;
-  --canvas-bg: #1e1e1e;
-  --layers-bg: #1f1f1f;
-  --border-color: #555555;
-  --transition-duration: 0.3s;
+	--bg-body: #2b2b2b;
+	--sidebar-bg: #141414;
+	--group1-bg: #1c1c1c;
+	--group2-bg: #333333;
+	--button-bg: #444444;
+	--button-hover-bg: #666666;
+	--tooltip-bg: rgba(0, 0, 0, 0.8);
+	--tooltip-color: #ffffff;
+	--canvas-bg: #1e1e1e;
+	--layers-bg: #1f1f1f;
+	--border-color: #555555;
+	--transition-duration: 0.3s;
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  height: 100vh;
-  background: var(--bg-body);
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	height: 100vh;
+	background: var(--bg-body);
 }
 
 .sidebar {
-  width: 220px;
-  background: var(--sidebar-bg);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
+	width: 220px;
+	background: var(--sidebar-bg);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 15px;
+	padding: 0;
 }
 
 .tool-section {
-  padding-left: 10px;
-  border-radius: 4px;
+	padding-left: 10px;
+	border-radius: 4px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .tool-section h3 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 5px;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 5px;
 }
 .tool-section.group1 {
-  background: var(--group1-bg);
+	background: var(--group1-bg);
 }
 .tool-section.group2 {
-  background: var(--group2-bg);
+	background: var(--group2-bg);
 }
 
 .tool-button {
-  position: relative;
-  background: var(--button-bg);
-  border: none;
-  padding: 10px;
-  margin: 8px 0;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--transition-duration);
+	position: relative;
+	background: var(--button-bg);
+	border: none;
+	padding: 10px;
+	margin: 8px 0;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background var(--transition-duration);
 }
 
 .tool-button:hover {
-  background: var(--button-hover-bg);
+	background: var(--button-hover-bg);
 }
 
 .tool-button:hover::after {
-  content: attr(data-label);
-  position: absolute;
-  top: 50%;
-  left: 105%;
-  transform: translateY(-50%);
-  background: var(--tooltip-bg);
-  color: var(--tooltip-color);
-  white-space: nowrap;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 14px;
-  z-index: 10;
+	content: attr(data-label);
+	position: absolute;
+	top: 50%;
+	left: 105%;
+	transform: translateY(-50%);
+	background: var(--tooltip-bg);
+	color: var(--tooltip-color);
+	white-space: nowrap;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 14px;
+	z-index: 10;
 }
 
 .tool-button img {
-  width: 20px;
-  height: auto;
-  display: block;
+	width: 20px;
+	height: auto;
+	display: block;
 }
 
 .main {
-  flex: 1;
-  background: var(--canvas-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+	flex: 1;
+	background: var(--canvas-bg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
 }
 #canvas-container {
-  background: var(--canvas-bg);
-  border: 2px solid var(--border-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	background: var(--canvas-bg);
+	border: 2px solid var(--border-color);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .layers {
-  width: 220px;
-  background: var(--layers-bg);
-  padding: 20px 10px;
-  color: #fff;
-  overflow-y: auto;
+	width: 220px;
+	background: var(--layers-bg);
+	padding: 20px 10px;
+	color: #fff;
+	/* overflow-y: auto; */ /* Remove scrollbar */
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 15px;
 }
+
 .layers h3 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 5px;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 5px;
 }
 
+/* Modal overlay */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
 }
 
+/* Modal content styling */
 .modal-content {
-  background: #ffffff;
-  padding: 20px;
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 6px;
-  overflow: auto;
+	background: #fff;
+	padding: 28px 24px;
+	max-width: 420px;
+	min-width: 320px;
+	max-height: 90vh;
+	border-radius: 10px;
+	overflow: visible;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
+	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
 }
 
 .modal-field {
-  margin-bottom: 15px;
+	margin-bottom: 18px;
 }
 
 .modal-field label {
-  display: block;
-  margin-bottom: 5px;
+	display: block;
+	margin-bottom: 7px;
+	font-size: 15px;
 }
 
 .modal-buttons {
-  text-align: right;
+	text-align: right;
+	margin-top: 10px;
 }
 
 .modal-buttons button {
-  margin-left: 10px;
+	margin-left: 10px;
+	font-size: 15px;
+	padding: 7px 18px;
+	border-radius: 4px;
 }
 
+/* Side modal panels */
 .side-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
-  background: var(--sidebar-bg);
-  z-index: 20;
-  overflow-y: auto;
-  padding: 20px;
+	display: none;
+	position: absolute;
+	width: 340px;
+	min-width: 320px;
+	max-width: 420px;
+	background: #fff;
+	z-index: 30;
+	border: 2px solid var(--border-color);
+	border-radius: 10px;
+	padding: 28px 24px;
+	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+	/* overflow-y: auto; */ /* Remove scrollbar */
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
 }
 
+/* Ensure all modals use the same style */
 #rotateModal,
 #scaleModal,
 #arrangeModal,
@@ -176,40 +202,48 @@ body {
 #effectModal,
 #retouchModal,
 #drawingModal {
-  position: absolute;
-  z-index: 30;
-  display: none;
-  background: #ffffff;
-  border: 2px solid var(--border-color);
-  border-radius: 6px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	/* ...side-modal styles above... */
+	position: absolute;
+	z-index: 30;
+	display: none;
+	background: #fff;
+	border: 2px solid var(--border-color);
+	border-radius: 10px;
+	padding: 28px 24px;
+	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+	width: 340px;
+	min-width: 320px;
+	max-width: 420px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
+	overflow: visible;
 }
 
 /* Effekt modalı üçün grid üslubu */
 .effects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 15px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	margin-bottom: 15px;
 }
 
 .effects-grid .effect-btn {
-  background: var(--button-bg);
-  border: none;
-  padding: 10px;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  text-align: center;
-  transition: background var(--transition-duration);
+	background: var(--button-bg);
+	border: none;
+	padding: 10px;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 4px;
+	text-align: center;
+	transition: background var(--transition-duration);
+	font-size: 14px;
 }
 .effects-grid .effect-btn:hover {
-  background: var(--button-hover-bg);
+	background: var(--button-hover-bg);
 }
 .effects-grid img {
-  width: 50px;
-  height: auto;
-  display: block;
-  margin: 0 auto 5px;
+	width: 50px;
+	height: auto;
+	display: block;
+	margin: 0 auto 5px;
 }

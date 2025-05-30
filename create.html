@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,10 +8,11 @@
   <!-- Xarici CSS -->
   <link rel="stylesheet" href="css/creat.css">
   <!-- FilePond CSS -->
-  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
   <!-- Cropper.js CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
 </head>
+
 <body>
   <!-- Sol sidebar -->
   <div class="sidebar">
@@ -23,7 +25,8 @@
       <button id="btn-crop" class="tool-button" data-label="Kəsmə"><img src="img/scissors.png" alt=""></button>
       <button id="btn-arrange" class="tool-button" data-label="Sıralama"><img src="img/layer.png" alt=""></button>
       <button id="btn-adjust" class="tool-button" data-label="Rəng Ayarı"><img src="img/slider.png" alt=""></button>
-      <button id="btn-effect" class="tool-button" data-label="Effekt"><img src="img/equalizer-control.png" alt=""></button>
+      <button id="btn-effect" class="tool-button" data-label="Effekt"><img src="img/equalizer-control.png"
+          alt=""></button>
       <button id="btn-retouch" class="tool-button" data-label="Retouch"><img src="img/retouch.png" alt=""></button>
       <button id="btn-drawing" class="tool-button" data-label="Çizim"><img src="img/art.png" alt=""></button>
       <button id="btn-text" class="tool-button" data-label="Text"><img src="img/text.png" alt=""></button>
@@ -33,6 +36,7 @@
       <button id="btn-undo" class="tool-button" data-label="Undo"><img src="img/undo.png" alt=""></button>
       <button id="btn-redo" class="tool-button" data-label="Redo"><img src="img/redo.png" alt=""></button>
       <button id="btn-save" class="tool-button" data-label="Save"><img src="img/download.png" alt=""></button>
+      <a id="downloadLink" style="display:none"></a>
     </div>
   </div>
 
@@ -43,48 +47,31 @@
     </div>
   </div>
 
-  <!-- Layers paneli -->
-  <div class="layers">
-    <h3>Layers</h3>
-    <ul id="layer-list"></ul>
-  </div>
-
   <!-- Gizli şəkil yükləmə inputu -->
   <input type="file" id="fileUpload" style="display: none" accept="image/*">
 
-  <!-- Crop Modal -->
-  <div id="cropModal" class="modal">
-    <div class="modal-content">
-      <h3>Kəsmə Modu</h3>
-      <img id="cropImage" src="" alt="Crop Image">
-      <div class="modal-buttons">
-        <button id="cancelCrop" class="tool-button" data-label="Ləğv Et">Ləğv</button>
-        <button id="applyCrop" class="tool-button" data-label="Təsdiqlə">Təsdiq</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Rotate Modal -->
+  <!-- Rotate Modal (yan pəncərə) -->
   <div id="rotateModal" class="side-modal">
     <div class="modal-content">
       <h3>Fırlatma və Flip</h3>
       <div class="modal-field">
-        <label for="rotationSlider">Bucağ:</label>
-        <input type="range" id="rotationSlider" min="-360" max="360" value="0">
-        <input type="number" id="rotationInput" min="-360" max="360" value="0">
+        <button id="rotate90Btn" class="tool-button" data-label="90° Fırlat">Rotate 90°</button>
       </div>
       <div class="modal-field">
-        <label><input type="checkbox" id="flipHorizontal"> Horizontal Flip</label>
-        <label><input type="checkbox" id="flipVertical"> Vertical Flip</label>
+        <label>
+          <input type="checkbox" id="flipHorizontal"> Horizontal Flip
+        </label>
+        <label>
+          <input type="checkbox" id="flipVertical"> Vertical Flip
+        </label>
       </div>
       <div class="modal-buttons">
-        <button id="cancelRotate" class="tool-button" data-label="Ləğv Et">Ləğv</button>
-        <button id="applyRotate" class="tool-button" data-label="Təsdiqlə">Təsdiq</button>
+        <button id="closeRotate" class="tool-button" data-label="Bağla">Bağla</button>
       </div>
     </div>
   </div>
 
-  <!-- Scale Modal -->
+  <!-- Scale Modal (yan pəncərə) -->
   <div id="scaleModal" class="side-modal">
     <div class="modal-content">
       <h3>Ölçünü Dəyiş</h3>
@@ -94,13 +81,12 @@
         <input type="number" id="scaleInput" min="0.1" max="3" step="0.1" value="1">
       </div>
       <div class="modal-buttons">
-        <button id="cancelScale" class="tool-button" data-label="Ləğv Et">Ləğv</button>
-        <button id="applyScale" class="tool-button" data-label="Təsdiqlə">Təsdiq</button>
+        <button id="closeScale" class="tool-button" data-label="Bağla">Bağla</button>
       </div>
     </div>
   </div>
 
-  <!-- Arrange Modal -->
+  <!-- Arrange Modal: Obyektin adı və opasite -->
   <div id="arrangeModal" class="side-modal">
     <div class="modal-content">
       <h3>Sıralama & Parametrlər</h3>
@@ -114,12 +100,12 @@
         <input type="number" id="opacityInput" min="0" max="1" step="0.1" value="1">
       </div>
       <div class="modal-buttons">
-        <button id="cancelArrange" class="tool-button" data-label="Ləğv Et">Ləğv</button>
+        <button id="closeArrange" class="tool-button" data-label="Bağla">Bağla</button>
       </div>
     </div>
   </div>
 
-  <!-- Adjust Modal -->
+  <!-- Adjust Modal: Rəng ayarları -->
   <div id="adjustModal" class="side-modal">
     <div class="modal-content">
       <h3>Rəng Ayarları</h3>
@@ -136,52 +122,52 @@
         <input type="range" id="saturationSlider" min="-1" max="1" step="0.1" value="0">
       </div>
       <div class="modal-buttons">
-        <button id="cancelAdjust" class="tool-button" data-label="Ləğv Et">Ləğv</button>
+        <button id="closeAdjust" class="tool-button" data-label="Bağla">Bağla</button>
       </div>
     </div>
   </div>
 
-  <!-- Effect Modal -->
+  <!-- Effect Modal: Grid formatında effektlər -->
   <div id="effectModal" class="side-modal">
     <div class="modal-content">
       <h3>Vizual Effektlər</h3>
       <div class="effects-grid">
         <button class="effect-btn" id="effect-grayscale" data-label="Grayscale">
-          <img src="img/preview_grayscale.png" alt="">
+          <img src="preview_grayscale.png" alt="">
           <span>Grayscale</span>
         </button>
         <button class="effect-btn" id="effect-sepia" data-label="Sepia">
-          <img src="img/preview_sepia.png" alt="">
+          <img src="preview_sepia.png" alt="">
           <span>Sepia</span>
         </button>
         <button class="effect-btn" id="effect-invert" data-label="Invert">
-          <img src="img/preview_invert.png" alt="">
+          <img src="preview_invert.png" alt="">
           <span>Invert</span>
         </button>
         <button class="effect-btn" id="effect-brightness" data-label="Brightness">
-          <img src="img/preview_brightness.png" alt="">
+          <img src="preview_brightness.png" alt="">
           <span>Brightness</span>
         </button>
         <button class="effect-btn" id="effect-contrast" data-label="Contrast">
-          <img src="img/preview_contrast.png" alt="">
+          <img src="preview_contrast.png" alt="">
           <span>Contrast</span>
         </button>
         <button class="effect-btn" id="effect-blur" data-label="Blur">
-          <img src="img/preview_blur.png" alt="">
+          <img src="preview_blur.png" alt="">
           <span>Blur</span>
         </button>
         <button class="effect-btn" id="effect-saturation" data-label="Saturation">
-          <img src="img/preview_saturation.png" alt="">
+          <img src="preview_saturation.png" alt="">
           <span>Saturation</span>
         </button>
       </div>
       <div class="modal-buttons">
-        <button id="cancelEffect" class="tool-button" data-label="Ləğv Et">Ləğv</button>
+        <button id="closeEffect" class="tool-button" data-label="Bağla">Bağla</button>
       </div>
     </div>
   </div>
 
-  <!-- Retouch Modal -->
+  <!-- Retouch Modal: Sadə versiya (Blur & Sharpen) -->
   <div id="retouchModal" class="side-modal">
     <div class="modal-content">
       <h3>Retouch Alətləri</h3>
@@ -190,15 +176,20 @@
         <button id="retouch-sharpen" class="tool-button" data-label="Sharpen">Sharpen</button>
       </div>
       <div class="modal-buttons">
-        <button id="cancelRetouch" class="tool-button" data-label="Ləğv Et">Ləğv</button>
+        <button id="closeRetouch" class="tool-button" data-label="Bağla">Bağla</button>
       </div>
     </div>
   </div>
 
-  <!-- Drawing Modal -->
+  <!-- Drawing Modal: Fırça, Eraser, Pen, Fill, Shapes -->
   <div id="drawingModal" class="side-modal">
     <div class="modal-content">
       <h3>Çizim Alətləri</h3>
+      <div class="modal-field">
+        <label for="drawingColor">Rəng seç:</label>
+        <input type="color" id="drawingColor" value="#000000"
+          style="width:40px;height:32px;border:none;vertical-align:middle;">
+      </div>
       <div class="modal-buttons">
         <button id="drawing-brush" class="tool-button" data-label="Fırça">Fırça</button>
         <button id="drawing-eraser" class="tool-button" data-label="Pozan">Pozan</button>
@@ -207,16 +198,17 @@
         <button id="drawing-shapes" class="tool-button" data-label="Formalar">Formalar</button>
       </div>
       <div class="modal-buttons">
-        <button id="cancelDrawing" class="tool-button" data-label="Ləğv Et">Ləğv</button>
+        <button id="closeDrawing" class="tool-button" data-label="Bağla">Bağla</button>
       </div>
     </div>
   </div>
 
-  <!-- JS Kitabxanalar -->
+  <!-- Kitabxana skriptləri və əsas JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
   <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
   <script src="js/create.js"></script>
 </body>
+
 </html>
