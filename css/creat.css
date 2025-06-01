@@ -252,3 +252,180 @@ body {
 	display: block;
 	margin: 0 auto 5px;
 }
+/* Ümumi mobil üçün (max-width: 768px) */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Aşağı scrollu önləmək üçün */
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 5px 0;
+  }
+
+  .tool-section {
+    flex: 0 0 auto;
+    padding: 0 8px;
+  }
+
+  .tool-button {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 6px;
+    margin: 0 5px;
+    font-size: 16px;
+  }
+
+  .tool-button img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .layers {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 14px;
+    max-height: 130px;
+    overflow-y: auto;
+  }
+
+  .main {
+    flex: 1;
+    background: var(--canvas-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+
+  #canvas-container {
+    background: var(--canvas-bg);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    max-height: 70vh;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+.undo-redo-save {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 400px;
+}
+
+.undo-redo-save button {
+    flex: 1 1 auto;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background: var(--button-bg);
+    color: white;
+    transition: background 0.3s;
+}
+
+.undo-redo-save button:hover {
+    background: var(--button-hover-bg);
+}
+
+  /* Modalların mobil görünüşü */
+  .side-modal,
+  #rotateModal,
+  #scaleModal,
+  #arrangeModal,
+  #adjustModal,
+  #effectModal,
+  #retouchModal,
+  #drawingModal {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 50vh !important;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+  }
+}
+
+/* Daha kiçik ekranlar üçün (max-width: 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 3px 0;
+  }
+
+  .tool-button {
+    min-width: 35px;
+    min-height: 35px;
+    font-size: 14px;
+    margin: 0 3px;
+  }
+
+  .tool-button img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .layers {
+    max-height: 110px;
+    font-size: 13px;
+  }
+
+  .main {
+    max-height: calc(100vh - 110px - 50px);
+  }
+    .undo-redo-save {
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+    .undo-redo-save button {
+        flex: 1 1 100%;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Ən kiçik ekranlar üçün (max-width: 320px) */
+@media (max-width: 320px) {
+  .sidebar {
+    padding: 2px 0;
+  }
+
+  .tool-button {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 12px;
+    margin: 0 2px;
+  }
+
+  .tool-button img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .layers {
+    max-height: 90px;
+    font-size: 12px;
+  }
+
+  .main {
+    max-height: calc(100vh - 90px - 40px);
+  }
+}
