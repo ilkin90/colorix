@@ -794,4 +794,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		link.click();
 		document.body.removeChild(link);
 	});
+	document.getElementById('btn-home').addEventListener('click', function() {
+  window.location.href = 'index.html';
+  });
+
 });
