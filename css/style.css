@@ -512,12 +512,10 @@ body {
 	left: 0;
 	right: 0;
 	height: 1px;
-	background: linear-gradient(
-		90deg,
-		transparent,
-		rgba(156, 39, 176, 0.5),
-		transparent
-	);
+	background: linear-gradient(90deg,
+			transparent,
+			rgba(156, 39, 176, 0.5),
+			transparent);
 }
 
 .footer-content {
@@ -739,6 +737,24 @@ body {
 	color: #9c27b0;
 }
 
+.menu-toggle {
+	display: none;
+	/* Normalda gizlənir */
+	flex-direction: column;
+	gap: 4px;
+	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+.menu-toggle span {
+	width: 25px;
+	height: 3px;
+	background-color: #fff;
+	display: block;
+	border-radius: 2px;
+}
+
 @media (max-width: 1024px) {
 	.footer-main {
 		grid-template-columns: 1fr 1fr;
@@ -765,7 +781,14 @@ body {
 	.company-description {
 		max-width: none;
 	}
+
+	*::after {
+		content: none;
+		display: none;
+	}
+
 }
+
 
 @media (max-width: 480px) {
 	.newsletter-input-group {
@@ -779,5 +802,104 @@ body {
 	.legal-links {
 		flex-direction: column;
 		gap: 10px;
+	}
+
+}
+
+
+@media (max-width: 700px) {
+	.menu-toggle {
+		display: flex;
+	}
+
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		gap: 10px;
+		background-color: #111;
+		padding: 10px;
+		position: absolute;
+		top: 60px;
+		right: 10px;
+		border-radius: 8px;
+		z-index: 1000;
+	}
+
+	.nav-links.show {
+		display: flex;
+	}
+
+	.navbar {
+		justify-content: space-between;
+	}
+
+	.logo {
+		flex: 1;
+	}
+
+	.hero {
+		flex-direction: column;
+		padding: 40px 10px;
+	}
+
+	.hero-content h1 {
+		font-size: 1.8rem;
+	}
+
+	.hero-content p {
+		max-width: 300px;
+		margin: 0 auto;
+		font-size: 1rem;
+	}
+
+	.hero-buttons {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.hero-buttons button {
+		width: 100%;
+		max-width: 200px;
+		margin: 0 auto;
+		padding: 10px 15px;
+		font-size: 0.9rem;
+	}
+
+	.gallery-content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.gallery-text {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.gallery-images {
+		height: auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	.image-container {
+		position: static;
+		width: 300px;
+		height: auto;
+	}
+
+	.image-container img {
+		position: static;
+		width: 100%;
+		max-width: 300px;
+		transform: none !important;
+		opacity: 1 !important;
+	}
+
+
+	.image-left,
+	.image-right {
+		display: none;
 	}
 }

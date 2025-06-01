@@ -81,3 +81,51 @@ body {
   margin: 0 auto;
 }
 
+.menu-toggle {
+  display: none; /* Normalda gizlənir */
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  border-radius: 2px;
+}
+
+/* 700px-dən aşağı ekranlarda göstər */
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #111;
+    padding: 10px;
+    position: absolute;
+    top: 60px; /* navbar hündürlüyünə uyğun ayarla */
+    right: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex: 1;
+  }
+}
