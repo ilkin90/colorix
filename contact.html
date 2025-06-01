@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Əlaqə - Colorix Foto Redaktoru</title>
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="Colorix Loqosu">
+        <span>olorix</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Ana səhifə</a></li>
+        <li><a href="about.html">Haqqında</a></li>
+        <li><a href="contact.html">Əlaqə</a></li>
+        <li><a href="auth.html">Giriş</a></li>
+        <li><a href="premium.html">Premium</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bizimlə Əlaqə</h1>
+      <p>
+        Suallarınız və ya rəyləriniz var? Sizdən eşitmək istərdik.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="content-container">
+      <div class="contact-info">
+        <h2>Əlaqə Saxlayın</h2>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <h3>E-poçt</h3>
+            <p>support@colorix.com</p>
+          </div>
+          <div class="contact-method">
+            <h3>Telefon</h3>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="contact-method">
+            <h3>Ünvan</h3>
+            <p>123 Dizayn Küçəsi<br>Yaradıcı Şəhər, YŞ 12345</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-section">
+        <h2>Bizə Mesaj Göndərin</h2>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Ad *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-poçt *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Mövzu *</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mesaj *</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Mesaj Göndər</button>
+        </form>
+
+        <div id="formMessage" class="form-message" style="display: none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-section company-info">
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Colorix Loqosu">
+            <span>olorix</span>
+          </div>
+          <p class="company-description">
+            Professional foto redaktə alətləri ilə yaradıcılığınızı sərbəst buraxın.
+            Hər kəs üçün sadə və güclü redaktə təcrübəsi.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section quick-links">
+          <h3>Sürətli Keçidlər</h3>
+          <ul>
+            <li><a href="index.html">Ana səhifə</a></li>
+            <li><a href="about.html">Haqqında</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+            <li><a href="premium.html">Premium</a></li>
+            <li><a href="create.html">Foto Redaktoru</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section support-links">
+          <h3>Dəstək</h3>
+          <ul>
+            <li><a href="#">Kömək Mərkəzi</a></li>
+            <li><a href="#">Təlimatlar</a></li>
+            <li><a href="#">Video Dərslər</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Texniki Dəstək</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section newsletter">
+          <h3>Xəbər Bülleteni</h3>
+          <p>Yeni xüsusiyyətlər və yeniləmələr haqqında məlumat alın</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="E-poçt ünvanınız" required>
+              <button type="submit">Abunə ol</button>
+            </div>
+          </form>
+          <div class="newsletter-message" id="newsletterMessage"></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 Colorix. Bütün hüquqlar qorunur.</p>
+          <ul class="legal-links">
+            <li><a href="#">Məxfilik Siyasəti</a></li>
+            <li><a href="#">İstifadə Şərtləri</a></li>
+            <li><a href="#">Çerez Siyasəti</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

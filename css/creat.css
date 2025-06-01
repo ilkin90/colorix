@@ -179,17 +179,20 @@ body {
 /* Side modal panels */
 .side-modal {
 	display: none;
-	position: absolute;
+	position: fixed;
+	top: 0;
+	right: 0;
 	width: 340px;
 	min-width: 320px;
 	max-width: 420px;
+	height: 100vh !important;
 	background: #fff;
 	z-index: 30;
 	border: 2px solid var(--border-color);
-	border-radius: 10px;
+	border-radius: 0;
 	padding: 28px 24px;
-	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
-	/* overflow-y: auto; */ /* Remove scrollbar */
+	box-shadow: -2px 0 16px rgba(0, 0, 0, 0.18);
+	overflow-y: auto;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 16px;
 }
@@ -202,21 +205,23 @@ body {
 #effectModal,
 #retouchModal,
 #drawingModal {
-	/* ...side-modal styles above... */
-	position: absolute;
+	position: fixed !important;
+	top: 0 !important;
+	right: 0 !important;
 	z-index: 30;
 	display: none;
 	background: #fff;
 	border: 2px solid var(--border-color);
-	border-radius: 10px;
+	border-radius: 0;
 	padding: 28px 24px;
-	box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+	box-shadow: -2px 0 16px rgba(0, 0, 0, 0.18);
 	width: 340px;
 	min-width: 320px;
 	max-width: 420px;
+	height: 100vh !important;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 16px;
-	overflow: visible;
+	overflow-y: auto;
 }
 
 /* Effekt modalı üçün grid üslubu */

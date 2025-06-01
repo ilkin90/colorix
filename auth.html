@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giriş - Colorix Foto Redaktoru</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="Colorix Loqosu">
+        <span>olorix</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Ana səhifə</a></li>
+        <li><a href="about.html">Haqqında</a></li>
+        <li><a href="contact.html">Əlaqə</a></li>
+        <li><a href="auth.html">Giriş</a></li>
+        <li><a href="premium.html">Premium</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="auth-container">
+    <div class="auth-wrapper">
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="signin">Daxil ol</button>
+        <button class="tab-btn" data-tab="signup">Qeydiyyat</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <div id="signin" class="auth-form active">
+        <h2>Hesabınıza Daxil Olun</h2>
+        <form id="signinForm">
+          <div class="form-group">
+            <label for="signin-email">E-poçt</label>
+            <input type="email" id="signin-email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="signin-password">Şifrə</label>
+            <input type="password" id="signin-password" name="password" required>
+          </div>
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember-me">
+              <span class="checkmark"></span>
+              Məni xatırla
+            </label>
+            <a href="#" class="forgot-password">Şifrəni unutmusan?</a>
+          </div>
+          <button type="submit" class="auth-btn">Daxil ol</button>
+        </form>
+        <div class="auth-footer">
+          <p>Hesabınız yoxdur? <a href="#" class="switch-form" data-target="signup">Qeydiyyatdan keç</a></p>
+        </div>
+      </div>
+
+      <!-- Sign Up Form -->
+      <div id="signup" class="auth-form">
+        <h2>Yeni Hesab Yaradın</h2>
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="signup-name">Ad Soyad</label>
+            <input type="text" id="signup-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">E-poçt</label>
+            <input type="email" id="signup-email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Şifrə</label>
+            <input type="password" id="signup-password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Şifrəni Təkrarla</label>
+            <input type="password" id="signup-confirm-password" name="confirmPassword" required>
+          </div>
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" id="agree-terms" required>
+              <span class="checkmark"></span>
+              <a href="#" class="terms-link">İstifadə şərtləri</a> və <a href="#" class="privacy-link">Məxfilik
+                siyasəti</a> ilə razıyam
+            </label>
+          </div>
+          <button type="submit" class="auth-btn">Qeydiyyatdan keç</button>
+        </form>
+        <div class="auth-footer">
+          <p>Artıq hesabınız var? <a href="#" class="switch-form" data-target="signin">Daxil ol</a></p>
+        </div>
+      </div>
+
+      <div id="authMessage" class="auth-message" style="display: none;"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Colorix. Bütün hüquqlar qorunur.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">Haqqında</a></li>
+        <li><a href="contact.html">Əlaqə</a></li>
+        <li><a href="premium.html">Premium</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+
+</html>

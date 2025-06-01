@@ -18,7 +18,7 @@
   <div class="sidebar">
     <div class="tool-section group1">
       <h3>Alətlər</h3>
-      <button id="btn-home" class="tool-button" data-label="Home"><img src="img/home.png" alt=""></button>
+      <button id="btn-home" class="tool-button" data-label="Ana səhifə"><img src="img/home.png" alt=""></button>
       <button id="btn-upload" class="tool-button" data-label="Şəkil Yüklə"><img src="img/image-.png" alt=""></button>
       <button id="btn-rotate" class="tool-button" data-label="Fırlat"><img src="img/spin.png" alt=""></button>
       <button id="btn-scale" class="tool-button" data-label="Ölçünü Dəyiş"><img src="img/full-size.png" alt=""></button>
@@ -27,15 +27,15 @@
       <button id="btn-adjust" class="tool-button" data-label="Rəng Ayarı"><img src="img/slider.png" alt=""></button>
       <button id="btn-effect" class="tool-button" data-label="Effekt"><img src="img/equalizer-control.png"
           alt=""></button>
-      <button id="btn-retouch" class="tool-button" data-label="Retouch"><img src="img/retouch.png" alt=""></button>
+      <button id="btn-retouch" class="tool-button" data-label="Düzəliş"><img src="img/retouch.png" alt=""></button>
       <button id="btn-drawing" class="tool-button" data-label="Çizim"><img src="img/art.png" alt=""></button>
-      <button id="btn-text" class="tool-button" data-label="Text"><img src="img/text.png" alt=""></button>
+      <button id="btn-text" class="tool-button" data-label="Mətn"><img src="img/text.png" alt=""></button>
     </div>
     <div class="tool-section group2">
       <h3>Əməliyyatlar</h3>
-      <button id="btn-undo" class="tool-button" data-label="Undo"><img src="img/undo.png" alt=""></button>
-      <button id="btn-redo" class="tool-button" data-label="Redo"><img src="img/redo.png" alt=""></button>
-      <button id="btn-save" class="tool-button" data-label="Save"><img src="img/download.png" alt=""></button>
+      <button id="btn-undo" class="tool-button" data-label="Geri"><img src="img/undo.png" alt=""></button>
+      <button id="btn-redo" class="tool-button" data-label="İrəli"><img src="img/redo.png" alt=""></button>
+      <button id="btn-save" class="tool-button" data-label="Yadda saxla"><img src="img/download.png" alt=""></button>
       <a id="downloadLink" style="display:none"></a>
     </div>
   </div>
@@ -53,16 +53,16 @@
   <!-- Rotate Modal (yan pəncərə) -->
   <div id="rotateModal" class="side-modal">
     <div class="modal-content">
-      <h3>Fırlatma və Flip</h3>
+      <h3>Fırlatma və Çevirme</h3>
       <div class="modal-field">
-        <button id="rotate90Btn" class="tool-button" data-label="90° Fırlat">Rotate 90°</button>
+        <button id="rotate90Btn" class="tool-button" data-label="90° Fırlat">90° Fırlat</button>
       </div>
       <div class="modal-field">
         <label>
-          <input type="checkbox" id="flipHorizontal"> Horizontal Flip
+          <input type="checkbox" id="flipHorizontal"> Üfüqi Çevirme
         </label>
         <label>
-          <input type="checkbox" id="flipVertical"> Vertical Flip
+          <input type="checkbox" id="flipVertical"> Şaquli Çevirme
         </label>
       </div>
       <div class="modal-buttons">
@@ -76,7 +76,7 @@
     <div class="modal-content">
       <h3>Ölçünü Dəyiş</h3>
       <div class="modal-field">
-        <label for="scaleSlider">Scale Faktor:</label>
+        <label for="scaleSlider">Ölçü Faktoru:</label>
         <input type="range" id="scaleSlider" min="0.1" max="3" step="0.1" value="1">
         <input type="number" id="scaleInput" min="0.1" max="3" step="0.1" value="1">
       </div>
@@ -95,7 +95,7 @@
         <input type="text" id="objectName" placeholder="Ad əlavə et">
       </div>
       <div class="modal-field">
-        <label for="opacitySlider">Opasite:</label>
+        <label for="opacitySlider">Şəffaflıq:</label>
         <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="1">
         <input type="number" id="opacityInput" min="0" max="1" step="0.1" value="1">
       </div>
@@ -132,33 +132,33 @@
     <div class="modal-content">
       <h3>Vizual Effektlər</h3>
       <div class="effects-grid">
-        <button class="effect-btn" id="effect-grayscale" data-label="Grayscale">
+        <button class="effect-btn" id="effect-grayscale" data-label="Boz rəng">
           <img src="preview_grayscale.png" alt="">
-          <span>Grayscale</span>
+          <span>Boz rəng</span>
         </button>
         <button class="effect-btn" id="effect-sepia" data-label="Sepia">
           <img src="preview_sepia.png" alt="">
           <span>Sepia</span>
         </button>
-        <button class="effect-btn" id="effect-invert" data-label="Invert">
+        <button class="effect-btn" id="effect-invert" data-label="Əks">
           <img src="preview_invert.png" alt="">
-          <span>Invert</span>
+          <span>Əks</span>
         </button>
-        <button class="effect-btn" id="effect-brightness" data-label="Brightness">
+        <button class="effect-btn" id="effect-brightness" data-label="Parlaqlıq">
           <img src="preview_brightness.png" alt="">
-          <span>Brightness</span>
+          <span>Parlaqlıq</span>
         </button>
-        <button class="effect-btn" id="effect-contrast" data-label="Contrast">
+        <button class="effect-btn" id="effect-contrast" data-label="Kontrast">
           <img src="preview_contrast.png" alt="">
-          <span>Contrast</span>
+          <span>Kontrast</span>
         </button>
-        <button class="effect-btn" id="effect-blur" data-label="Blur">
+        <button class="effect-btn" id="effect-blur" data-label="Bulanıq">
           <img src="preview_blur.png" alt="">
-          <span>Blur</span>
+          <span>Bulanıq</span>
         </button>
-        <button class="effect-btn" id="effect-saturation" data-label="Saturation">
+        <button class="effect-btn" id="effect-saturation" data-label="Doyum">
           <img src="preview_saturation.png" alt="">
-          <span>Saturation</span>
+          <span>Doyum</span>
         </button>
       </div>
       <div class="modal-buttons">
@@ -170,10 +170,10 @@
   <!-- Retouch Modal: Sadə versiya (Blur & Sharpen) -->
   <div id="retouchModal" class="side-modal">
     <div class="modal-content">
-      <h3>Retouch Alətləri</h3>
+      <h3>Düzəliş Alətləri</h3>
       <div class="modal-buttons">
-        <button id="retouch-blur" class="tool-button" data-label="Blur">Blur</button>
-        <button id="retouch-sharpen" class="tool-button" data-label="Sharpen">Sharpen</button>
+        <button id="retouch-blur" class="tool-button" data-label="Bulanıq">Bulanıq</button>
+        <button id="retouch-sharpen" class="tool-button" data-label="Kəskin">Kəskin</button>
       </div>
       <div class="modal-buttons">
         <button id="closeRetouch" class="tool-button" data-label="Bağla">Bağla</button>

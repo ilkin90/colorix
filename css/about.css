@@ -1,0 +1,218 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Arial", sans-serif;
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+body {
+	background: linear-gradient(135deg, #141e30, #243b55);
+	color: #fff;
+	min-height: 100vh;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	width: 40px;
+	height: 40px;
+}
+
+.logo span {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	margin-left: 20px;
+}
+
+.nav-links li a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: 500;
+	transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+	color: #f0f0f0;
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 20px 40px;
+	text-align: center;
+}
+
+.hero-content h1 {
+	font-size: 4.5rem;
+	background: linear-gradient(to right, #9c27b0, #ffffff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 20px;
+}
+
+.hero-content p {
+	font-size: 1.2rem;
+	max-width: 600px;
+	line-height: 1.5;
+	margin: 0 auto;
+}
+
+.about-content {
+	padding: 40px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.content-container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.about-section {
+	margin-bottom: 60px;
+}
+
+.about-section h2 {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.about-section p {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: #e0e0e0;
+	margin-bottom: 20px;
+}
+
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 30px;
+	margin-top: 30px;
+}
+
+.feature-card {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 30px;
+	border-radius: 15px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+	font-size: 1.5rem;
+	margin-bottom: 15px;
+	color: #9c27b0;
+}
+
+.feature-card p {
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #d0d0d0;
+}
+
+.benefits-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.benefits-list li {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: #e0e0e0;
+	margin-bottom: 10px;
+	padding-left: 30px;
+	position: relative;
+}
+
+.benefits-list li::before {
+	content: "✓";
+	position: absolute;
+	left: 0;
+	color: #9c27b0;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.site-footer {
+	background-color: #0f1d2d;
+	padding: 20px 0;
+	text-align: center;
+	color: #ccc;
+	margin-top: 50px;
+}
+
+.footer-content {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.footer-content p {
+	margin-bottom: 10px;
+	font-size: 0.9rem;
+}
+
+.footer-links {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-links li a {
+	color: #ccc;
+	text-decoration: none;
+	font-size: 0.9rem;
+	transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+	color: #fff;
+}
+
+@media (max-width: 768px) {
+	.hero-content h1 {
+		font-size: 3rem;
+	}
+
+	.about-section h2 {
+		font-size: 2rem;
+	}
+
+	.features-grid {
+		grid-template-columns: 1fr;
+	}
+}

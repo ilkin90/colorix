@@ -69,7 +69,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Helper to hide all main modals
 	function hideAllMainModals() {
-		const modals = ["cropModal", "rotateModal", "scaleModal", "arrangeModal"];
+		const modals = [
+			"cropModal",
+			"rotateModal",
+			"scaleModal",
+			"arrangeModal",
+			"adjustModal",
+			"effectModal",
+			"retouchModal",
+			"drawingModal",
+		];
 		modals.forEach((id) => {
 			const el = document.getElementById(id);
 			if (el) el.style.display = "none";
@@ -110,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			cornerStyle: "circle",
 		});
 		rect.setControlsVisibility({ mtr: false });
+
 		croppingRect = rect;
 		canvas.add(rect);
 		canvas.setActiveObject(rect);
@@ -353,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// --- Adjust ---
 	document.getElementById("btn-adjust").addEventListener("click", function () {
+		hideAllMainModals();
 		const active = canvas.getActiveObject();
 		if (active && active.type === "image") {
 			const btnRect = this.getBoundingClientRect();
@@ -418,6 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// --- Effects ---
 	document.getElementById("btn-effect").addEventListener("click", function () {
+		hideAllMainModals();
 		const active = canvas.getActiveObject();
 		if (active && active.type === "image") {
 			const btnRect = this.getBoundingClientRect();
@@ -524,6 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// --- Retouch ---
 	document.getElementById("btn-retouch").addEventListener("click", function () {
+		hideAllMainModals();
 		const active = canvas.getActiveObject();
 		if (active && active.type === "image") {
 			const btnRect = this.getBoundingClientRect();
@@ -571,6 +584,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// --- Drawing: Brush, Eraser, Pen, Fill, Shapes ---
 	document.getElementById("btn-drawing").addEventListener("click", function () {
+		hideAllMainModals();
 		const btnRect = this.getBoundingClientRect();
 		const drawingModal = document.getElementById("drawingModal");
 		drawingModal.style.top = btnRect.top + "px";
@@ -798,4 +812,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.location.href = 'index.html';
   });
 
+	document.getElementById("btn-home").addEventListener("click", function () {
+	window.location.href = "index.html";
+});
 });

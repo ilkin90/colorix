@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Colorix - Photo Editor</title>
+  <title>Colorix - Foto Redaktoru</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header>
     <nav class="navbar">
@@ -14,25 +16,24 @@
         <span>olorix</span>
       </div>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#signin">Sign In</a></li>
-        <li><a href="#signup">Sign Up</a></li>
-        <li><a href="#premium">Premium</a></li>
+        <li><a href="about.html">Haqqında</a></li>
+        <li><a href="contact.html">Əlaqə</a></li>
+        <li><a href="auth.html">Giriş</a></li>
+        <li><a href="premium.html">Premium</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h1>PHOTO EDITOR</h1>
+      <h1>FOTO REDAKTORU</h1>
       <p>
-        Experience a traditional photo editing experience with our feature-packed editor.
-        No AI gimmicks – just pure editing power.
+        Zəngin xüsusiyyətlərlə dolu redaktorumuzla ənənəvi foto redaktə təcrübəsini yaşayın.
+        AI hiylələri yoxdur - sadəcə təmiz redaktə gücü.
       </p>
       <div class="hero-buttons">
-        <button id="openEditor">Open Photo Editor</button>
-        <button id="startTrial">Start Free Trial</button>
+        <button id="openEditor">Foto Redaktoru Açın</button>
+        <button id="startTrial">Pulsuz Sınaq Başladın</button>
       </div>
       <hr class="separator">
       <div class="editor-section">
@@ -66,7 +67,7 @@
     <div class="gallery-content">
       <div class="gallery-text">
         <h2>AI ilə hazırlanmış şəkil nümunələri</h2>
-        <button onclick="window.location.href='https://www.artbreeder.com/'" class="show-btn">Show</button>
+        <button onclick="window.location.href='https://www.artbreeder.com/'" class="show-btn">Göstər</button>
       </div>
       <div class="gallery-images">
         <div class="image-container">
@@ -78,17 +79,199 @@
     </div>
   </section>
 
+  <!-- Featured Tools Section -->
+  <section class="featured-tools">
+    <div class="section-container">
+      <h2 class="section-title">Populyar Dizayn Alətləri</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop" alt="Canva">
+          <div class="tool-content">
+            <h3>Canva</h3>
+            <p>Peşəkar dizaynlar üçün sürüküklə-burax interfeysi</p>
+            <a href="https://www.canva.com/" target="_blank" class="tool-btn">Keçid et</a>
+          </div>
+        </div>
+        <div class="tool-card">
+          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=300&h=200&fit=crop" alt="Figma">
+          <div class="tool-content">
+            <h3>Figma</h3>
+            <p>Komanda üçün real vaxt dizayn əməkdaşlığı</p>
+            <a href="https://www.figma.com/" target="_blank" class="tool-btn">Keçid et</a>
+          </div>
+        </div>
+        <div class="tool-card">
+          <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=300&h=200&fit=crop"
+            alt="Adobe Creative Suite">
+          <div class="tool-content">
+            <h3>Adobe Creative Suite</h3>
+            <p>Professional yaradıcılıq üçün tam paket</p>
+            <a href="https://www.adobe.com/" target="_blank" class="tool-btn">Keçid et</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Websites Section -->
+  <section class="trending-websites">
+    <div class="section-container">
+      <h2 class="section-title">Trend Veb Saytları</h2>
+      <div class="websites-carousel">
+        <div class="website-item">
+          <div class="website-image">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=300&h=200&fit=crop" alt="Dribbble">
+          </div>
+          <div class="website-info">
+            <h3>Dribbble</h3>
+            <p>Dizayn ilhamı və yaradıcı icma</p>
+            <span class="category">Dizayn Portfolyo</span>
+          </div>
+        </div>
+        <div class="website-item">
+          <div class="website-image">
+            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=200&fit=crop" alt="Behance">
+          </div>
+          <div class="website-info">
+            <h3>Behance</h3>
+            <p>Adobe-un yaradıcı şəbəkəsi</p>
+            <span class="category">Yaradıcı Şəbəkə</span>
+          </div>
+        </div>
+        <div class="website-item">
+          <div class="website-image">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop" alt="Awwwards">
+          </div>
+          <div class="website-info">
+            <h3>Awwwards</h3>
+            <p>Ən yaxşı veb dizayn mükafatları</p>
+            <span class="category">Mükafat Platforması</span>
+          </div>
+        </div>
+        <div class="website-item">
+          <div class="website-image">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop" alt="Unsplash">
+          </div>
+          <div class="website-info">
+            <h3>Unsplash</h3>
+            <p>Pulsuz yüksək keyfiyyətli fotoqraflar</p>
+            <span class="category">Foto Bankı</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Inspiration Section -->
+  <section class="color-inspiration">
+    <div class="section-container">
+      <h2 class="section-title">Rəng İlhamı</h2>
+      <div class="color-palettes">
+        <div class="palette-card">
+          <div class="palette-colors">
+            <div class="color-box" style="background: #FF6B6B;"></div>
+            <div class="color-box" style="background: #4ECDC4;"></div>
+            <div class="color-box" style="background: #45B7D1;"></div>
+            <div class="color-box" style="background: #96CEB4;"></div>
+          </div>
+          <h4>Yay Palitra</h4>
+          <p>İsti və canlı rənglər</p>
+        </div>
+        <div class="palette-card">
+          <div class="palette-colors">
+            <div class="color-box" style="background: #667292;"></div>
+            <div class="color-box" style="background: #8D93AB;"></div>
+            <div class="color-box" style="background: #B8BDB5;"></div>
+            <div class="color-box" style="background: #F4F4F2;"></div>
+          </div>
+          <h4>Minimal Palitra</h4>
+          <p>Sakit və müasir</p>
+        </div>
+        <div class="palette-card">
+          <div class="palette-colors">
+            <div class="color-box" style="background: #2E3440;"></div>
+            <div class="color-box" style="background: #3B4252;"></div>
+            <div class="color-box" style="background: #434C5E;"></div>
+            <div class="color-box" style="background: #4C566A;"></div>
+          </div>
+          <h4>Qaranlıq Palitra</h4>
+          <p>Gözə rahatlıq verən tonlar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="footer-content">
-      <p>&copy; 2025 Colorix. All rights reserved.</p>
-      <ul class="footer-links">
-        <li><a href="#about">Haqqında</a></li>
-        <li><a href="#contact">Əlaqə</a></li>
-        <li><a href="#premium">Premium</a></li>
-      </ul>
+      <div class="footer-main">
+        <div class="footer-section company-info">
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Colorix Logo">
+            <span>olorix</span>
+          </div>
+          <p class="company-description">
+            Professional foto redaktə alətləri ilə yaradıcılığınızı sərbəst buraxın.
+            Hər kəs üçün sadə və güclü redaktə təcrübəsi.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section quick-links">
+          <h3>Sürətli Keçidlər</h3>
+          <ul>
+            <li><a href="index.html">Ana səhifə</a></li>
+            <li><a href="about.html">Haqqında</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+            <li><a href="premium.html">Premium</a></li>
+            <li><a href="create.html">Foto Redaktoru</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section support-links">
+          <h3>Dəstək</h3>
+          <ul>
+            <li><a href="#">Kömək Mərkəzi</a></li>
+            <li><a href="#">Təlimatlar</a></li>
+            <li><a href="#">Video Dərslər</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Texniki Dəstək</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section newsletter">
+          <h3>Xəbər Bülleteni</h3>
+          <p>Yeni xüsusiyyətlər və yeniləmələr haqqında məlumat alın</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="E-poçt ünvanınız" required>
+              <button type="submit">Abunə ol</button>
+            </div>
+          </form>
+          <div class="newsletter-message" id="newsletterMessage"></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 Colorix. Bütün hüquqlar qorunur.</p>
+          <ul class="legal-links">
+            <li><a href="#">Məxfilik Siyasəti</a></li>
+            <li><a href="#">İstifadə Şərtləri</a></li>
+            <li><a href="#">Çerez Siyasəti</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
